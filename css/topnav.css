@@ -1,0 +1,16 @@
+.nav-bar {
+    align-items: center;
+    background-color: #8FA18B;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    background: transparent;
+}
+
+.nav {
+    margin: 0 auto;
+}
+
+.nav-text {
+    color: #2b7cb3;
+}

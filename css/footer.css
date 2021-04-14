@@ -1,0 +1,22 @@
+footer {
+    align-items: center;
+    bottom: 0;
+    background-color: #543933;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    background: transparent; 
+}
+
+.footer-text {
+    color: #2b7cb3;
+    font-size: x-small;
+    margin: 0 auto;
+}
+
+.privacy {
+    margin: 0 auto;
+}
