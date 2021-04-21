@@ -1,154 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/topnav.css">
-    <link rel="stylesheet" href="./css/text.css">
-    <link rel="stylesheet" href="./css/background.css">
-    <title>Weather Widget</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <title>Home Page</title>
 </head>
 <body>
-    <div class="nav-bar">   <!--Beginning of Nav Bar-->
-        <div class="nav">
-            <a href="#home">
-                <span class="nav-text"><b>Home</b></span>
-            </a>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Radar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> -->
+          </ul>
         </div>
-        <div class="nav">
-            <a href="#alerts">
-                <span class="nav-text"><b>Alerts</b></span>
-            </a>
-        </div>
-        <div class="nav">
-            <a href="#about">
-                <span class="nav-text"><b>About Us</b></span>
-            </a>
-        </div>
-    </div>  <!--End of Nav Bar-->
+      </div>
+    </nav>
+  </header>
+  <main>
     <div class="weather">
-        <header>
-            <input type="text" autocomplete="off" class="search-box" placeholder="Search by City" />
-        </header>
-        <main>
-            <section class="location">
-                <div class="city">Houston, Texas</div>
-                <div class="date">Wednesday, April 14th 2021</div>
-            </section>
-            <div class="current">
-                <div class="temp">66<span>°f</span></div>
-                <div class="weather">Partly Cloudy</div>
-                <div class="hi-low">Hi: 70°f / Low: 45°f</div>
-            </div>
-        </main>
-    </div>
 
-    <div class="text-container">
-        <div class="jumbotron text-center">
-            <p>
-                Weath·er - /ˈweT͟Hər/ - 
-                the state of the atmosphere at 
-                a place and time as regards heat, 
-                dryness, sunshine, wind, rain, etc.
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-              <h3>Tornadoes</h3>
-              <p><pre> 
-                    Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Nisl 
-                nunc mi ipsum faucibus vitae aliquet. 
-
-                    A pellentesque sit amet porttitor 
-                eget dolor morbi non. Ante metus dictum 
-                at tempor. Risus in hendrerit gravida 
-                rutrum quisque non. Fringilla est 
-                ullamcorper eget nulla facilisi etiam
-                dignissim diam quis. Maecenas ultricies
-                mi eget mauris. Congue mauris rhoncus 
-                aenean vel elit scelerisque. Lobortis 
-                mattis aliquam faucibus purus in massa tempor. 
-                Duis tristique sollicitudin nibh sit amet 
-                commodo nulla facilisi. Augue ut lectus 
-                arcu bibendum at varius vel pharetra vel.
-                Tincidunt nunc pulvinar sapien et 
-                ligula ullamcorper.
-            </pre></p>
-            </div>
-            <div class="col-sm-4">
-              <h3>Hurricanes</h3>
-              <p><pre>
-                    Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Nisl 
-                nunc mi ipsum faucibus vitae aliquet. 
-
-                    A pellentesque sit amet porttitor 
-                eget dolor morbi non. Ante metus dictum 
-                at tempor. Risus in hendrerit gravida 
-                rutrum quisque non. Fringilla est 
-                ullamcorper eget nulla facilisi etiam
-                dignissim diam quis. Maecenas ultricies
-                mi eget mauris. Congue mauris rhoncus 
-                aenean vel elit scelerisque. Lobortis 
-                mattis aliquam faucibus purus in massa tempor. 
-                Duis tristique sollicitudin nibh sit amet 
-                commodo nulla facilisi. Augue ut lectus 
-                arcu bibendum at varius vel pharetra vel.
-                Tincidunt nunc pulvinar sapien et 
-                ligula ullamcorper.
-            </pre></p>
-            </div>
-            <div class="col-sm-4">
-              <h3>Flash Floods</h3>        
-              <p><pre>
-                Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Nisl 
-            nunc mi ipsum faucibus vitae aliquet. 
-
-                A pellentesque sit amet porttitor 
-            eget dolor morbi non. Ante metus dictum 
-            at tempor. Risus in hendrerit gravida 
-            rutrum quisque non. Fringilla est 
-            ullamcorper eget nulla facilisi etiam
-            dignissim diam quis. Maecenas ultricies
-            mi eget mauris. Congue mauris rhoncus 
-            aenean vel elit scelerisque. Lobortis 
-            mattis aliquam faucibus purus in massa tempor. 
-            Duis tristique sollicitudin nibh sit amet 
-            commodo nulla facilisi. Augue ut lectus 
-            arcu bibendum at varius vel pharetra vel.
-            Tincidunt nunc pulvinar sapien et 
-            ligula ullamcorper.
-        </pre></p>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://picsum.photos/190/180" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
-    </div>
-    <div class="footer"> <!--Beginning of footer-->
-        <footer>
-            <span class="footer-text">2021</span>
-            <div class="logo">
-                <img src="./logo-25.svg">
+        </div>
+      </div>
+
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://picsum.photos/190/185" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
-            <a href="#privacy-policy" target="_blank" class="privacy">
-                <span class="footer-text">Privacy Policy</span>
-            </a>
-        </footer>
-    </div> <!--End of Footer-->
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://picsum.photos/190/190" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+  <footer>
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./logo-25.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          Fixed Footer Area
+        </a>
+      </div>
+    </nav>
+  </footer>
 </body>
-<script src="./main.js"></script>
 </html>
