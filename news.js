@@ -1,6 +1,6 @@
 const newsApiKey = {
   key: "271c952b09b541eb9c278ed7ed1ecdbb",
-  base: "https://newsapi.org/v2/everything"
+  base: "https://newsapi.org/v2/everything/"
 }
 
 const newsSearchSubmit = document.getElementById("submit-button");
@@ -12,8 +12,8 @@ newsSearchSubmit.addEventListener('click', e => {
   getNewsApiResults(newsSearchString);
 });
 
-const getNewsApiResults = newsSearchString => { // this function will make the request from the news API
-  let url = `${newsApiKey.base}q=${newsSearchString}&apiKey=${newsApiKey.key}`;
+function getNewsApiResults(newsSearchString){ // this function will make the request from the news API
+  let url = `${newsApiKey.base}?q=${newsSearchString}&apiKey=${newsApiKey.key}`;
   axios.get(url).then(res => {
     console.log(res);
   })
