@@ -24,3 +24,5 @@ function getOpenWeatherResults(searchString){ // this function will make the req
     console.log(err);
   })
 }
+
+
