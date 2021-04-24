@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+.d-flex {
+    width: 300px;
+}
+
+.widget {
+    text-align: center;
+}
+
+.d-flex input:focus {
+    background-color: rgba(187, 199, 190, 0.3);
+}
