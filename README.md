@@ -13,11 +13,13 @@ We also have a seperate page which will showcase the local news of the user's lo
 - OpenWeather Api
 - NewsApi
 - GoogleMaps Api
+- RainViewer Api
 
 ## The javascript libraries that we are implementing for this project are:
 
 - MomentJs
 - JQuery
+- Leaflet
 
 ## The Css framework in this project is:
 
