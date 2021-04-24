@@ -12,8 +12,8 @@ newsSearchSubmit.addEventListener('click', e => {
   getNewsApiResults(newsSearchString);
 });
 
-function getNewsApiResults(newsSearchString){ // this function will make the request from the news API
-  let url = `${newsApiKey.base}?q=${newsSearchString}&apiKey=${newsApiKey.key}`;
+function getNewsApiResults(newsSearchString) { // this function will make the request from the news API
+  let url = `${newsApiKey.base}?q=${newsSearchString}&apiKey=${newsApiKey.key}&pageSize=5`;
   axios.get(url).then(res => {
     console.log(res);
   })
