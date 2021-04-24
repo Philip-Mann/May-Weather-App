@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/weather.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/dcbcb40c25.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -40,16 +41,18 @@
       </nav>
     </header>
     <main>
+      <div class="container">
         <form class="d-flex">
-            <input id="search-bar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input id="search-bar" class="form-control me-2" type="search" placeholder="Search by City" aria-label="Search">
             <button id="submit-button" class="btn btn-outline-success" type="submit">Search</button>
         </form>
+      </div>  
       <div id="widget" class="widget">
-        <!-- <div id="location" class="location">City, State</div>
-        <div id="current" class="current">Current: 78°f</div>
-        <div id="feels-like" class="feels-like">Feels Like: 99°f</div>
-        <div id="high" class="high">High: 88°f</div>
-        <div id="low" class="low">Low: 70°f</div>
+        <!-- <div id="location" class="location"><h2>City</h2></div>
+        <div id="current" class="current"><h3>Current:</h3></div>
+        <div id="feels-like" class="feels-like"><h3>Feels Like</h3></div>
+        <div id="high" class="high"><h3>High</h3></div>
+        <div id="low" class="low"><h3>Low</h3></div>
         <div id="description" class="description">Rainy</div> -->
       </div>
 

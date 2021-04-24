@@ -45,11 +45,11 @@ const renderWeatherData = (widget, location, current, feelsLike, high, low, desc
   // console.log(description);
   target.innerHTML = `
     <div id="widget" class="widget">
-      <div id="location" class="location">${location}</div>
-      <div id="current" class="current">Current: ${current}°f</div>
-      <div id="feels-like" class="feels-like">Feels Like: ${feelsLike}°f</div>
-      <div id="high" class="high">High: ${high}°f</div>
-      <div id="low" class="low">Low: ${low}°f</div>
+      <div id="location" class="location"><h1>${location}</h1></div>
+      <div id="current" class="current"><h2>Current: ${Math.round(current)}°f</h2></div>
+      <div id="feels-like" class="feels-like"><h4>Feels Like: ${Math.round(feelsLike)}°f</h4></div>
+      <div id="high" class="high"><h4>High: ${Math.round(high)}°f</h4></div>
+      <div id="low" class="low"><h4>Low: ${Math.round(low)}°f</h4></div>
       <div id="description" class="description">${description}</div>
     </div>
   `;
