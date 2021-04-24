@@ -49,30 +49,36 @@
       </nav>
     </header>
     <main>
+      <div class="container-fluid">
+        <div id="timestamp" style="text-align:center; height: 40px;">FRAME TIME</div>
         <div class="container-fluid">
-      <ul style="text-align:center; position: absolute;top: 120px; left: 0; right: 0; height: 100px;">
-        <li><input type="radio" name="kind" checked="checked" onchange="setKind('radar')">Radar (Past + Future) <input type="radio" name="kind" onchange="setKind('satellite')">Infrared Satellite</li>
-    
-        <li><input type="button" onclick="stop(); showFrame(animationPosition - 1); return;" value="&lt;" /></li>
-        <li><input type="button" onclick="playStop();" value="Play / Stop" /></li>
-        <li><input type="button" onclick="stop(); showFrame(animationPosition + 1); return;" value="&gt;" /></li>
-    
-        <li><select id="colors" onchange="setColors(); return;">
-            <option value="0">Black and White Values</option>
-            <option value="1">Original</option>
-            <option value="2">Universal Blue</option>
-            <option value="3">TITAN</option>
-            <option value="4" selected="selected">The Weather Channel</option>
-            <option value="5">Meteored</option>
-            <option value="6">NEXRAD Level-III</option>
-            <option value="7">RAINBOW @ SELEX-SI</option>
-            <option value="8">Dark Sky</option>
-        </select></li>
-    </ul>
+          <ul style="text-align:center; left: 0; right: 0; height: 40px;">
+            <li><input type="radio" name="kind" checked="checked" onchange="setKind('radar')">Radar (Past + Future) <input type="radio" name="kind" onchange="setKind('satellite')">Infrared Satellite</li>
+        
+            <li><input type="button" onclick="stop(); showFrame(animationPosition - 1); return;" value="&lt;" /></li>
+            <li><input type="button" onclick="playStop();" value="Play / Stop" /></li>
+            <li><input type="button" onclick="stop(); showFrame(animationPosition + 1); return;" value="&gt;" /></li>
+        
+            <li><select id="colors" onchange="setColors(); return;">
+                <option value="0">Black and White Values</option>
+                <option value="1">Original</option>
+                <option value="2">Universal Blue</option>
+                <option value="3">TITAN</option>
+                <option value="4" selected="selected">The Weather Channel</option>
+                <option value="5">Meteored</option>
+                <option value="6">NEXRAD Level-III</option>
+                <option value="7">RAINBOW @ SELEX-SI</option>
+                <option value="8">Dark Sky</option>
+            </select></li>
+          </ul>
         </div>
-    <div id="timestamp" style="text-align:center; position: absolute;top: 80px; left: 0; right: 0; height: 80px;">FRAME TIME</div>
-    
-    <div id="mapid" style="position: absolute; top: 170px; left: 0; bottom: 0; right: 0;"></div>
+        <div class="container-fluid">
+          <!-- <div id="mapid" style="border: 2px solid crimson; margin: 0 auto;"></div> -->
+        </div>
+        <!-- <div id="timestamp" style="text-align:center; position: absolute;top: 80px; left: 0; right: 0; height: 80px;">FRAME TIME</div> -->
+      <!-- style="position: absolute; top: 170px; left: 0; bottom: 0; right: 0; -->
+      <div class="container-fluid" id="mapid"style="position: absolute; top: 170px; left: 0; bottom: 0; right: 0;"></div>
+    </div>
       <script src="./radar.js"></script>
     </main>
     <footer>
