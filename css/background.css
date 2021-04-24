@@ -1,7 +1,7 @@
 /* Responsive Full Background Image Using CSS
  * Tutorial URL: http://sixrevisions.com/css/responsive-background-image/
 */
-body{
+/* body{
   background-image: url(../landscape.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -9,5 +9,6 @@ body{
   background-size: cover;  
   background-color:#464646;
   height: 100%;
-}
+} */
 
+/* keeping this here for reference */
