@@ -1,1 +1,12 @@
 /* main body CSS file */
+
+.radar-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.radar-map {
+  height: 370px;
+  width: 100%;
+  border: 1px solid blue;
+}
