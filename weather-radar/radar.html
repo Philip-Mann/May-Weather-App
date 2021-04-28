@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/dcbcb40c25.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <title>Radar Page</title>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
@@ -53,7 +53,7 @@
       </nav>
     </header>
     <main>
-      <div class="container-fluid">
+      <div class="container-fluid radar-display">
         <div id="timestamp" style="text-align:center; height: 40px;">FRAME TIME</div>
         <div class="container-fluid">
           <ul style="text-align:center; left: 0; right: 0; height: 40px;">
@@ -81,9 +81,8 @@
         </div>
         <!-- <div id="timestamp" style="text-align:center; position: absolute;top: 80px; left: 0; right: 0; height: 80px;">FRAME TIME</div> -->
       <!-- style="position: absolute; top: 170px; left: 0; bottom: 0; right: 0; -->
-      <div class="container-fluid" id="mapid"style="position: absolute; top: 170px; left: 0; bottom: 0; right: 0;"></div>
-    </div>
-      <script src="./radar.js"></script>
+        <div class="container-fluid radar-map" id="mapid"style=""></div>
+      </div>
     </main>
     <footer>
       <nav class="navbar fixed-bottom navbar-light bg-light">
@@ -100,5 +99,6 @@
         </div>
       </nav>
     </footer>
+    <script src="./radar.js"></script>
   </body>
 </html>
