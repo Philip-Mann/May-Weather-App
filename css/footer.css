@@ -1,58 +1,5 @@
 /* footer CSS file */
 
-
-
-.container-footer {
-  /* border: 1px solid red;     */
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  /* border: 1px solid green; */
-  width: 100%;
-}
-
-.media {
-  /* border: 1px solid blue; */
-  display: flex;
-  width: 50%;
-  justify-content: space-evenly;
-}
-
-.footer-text {
-  display: flex;
-  /* border: 1px solid blue; */
-  width: 100%;
-  flex-wrap: wrap;
-  
-}
-
-.footer-text p {
-  margin: auto;
-  display: flex;
-  text-align: center;
-  font-size: smaller;
-}
-
-.fa-facebook-f {
-  color: #4267B2;
-}
-
-.fa-twitter {
-  color: #1DA1F2;
-}
-
-.fa-instagram {
-  color: #C13584;
-}
-
-.fa-envelope {
-  color: gray;
-}
-
-
 .fa-facebook-f {
   color: #4267B2;
 }
