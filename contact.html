@@ -44,7 +44,7 @@
       </nav>
     </header>
     <main>
-      <div class="container">
+      <!-- <div class="container">
         <h1>Contact Us</h1>
         <form action="mailto:randomfake@email.com" method="post" enctype="text/plain" onsubmit="event.preventDefault();">
           <div class="form-group">
@@ -58,18 +58,33 @@
           <br />
           <button type="submit" value="submit" class="btn btn-lg btn-primary">Submit</button>
         </form>
-      </div>
+      </div> -->
     </main>
     <footer>
       <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container">
+          <h1>Contact Us</h1>
+          <form action="mailto:randomfake@email.com" method="post" enctype="text/plain" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label for="name">Your name:</label>
+              <input type="text" name="name" class="form-control" placeholder="name" required/><br />
+              <label for="email">Your email:</label>
+              <input type="email" name="email" class="form-control" placeholder="email" required/><br />
+            </div>
+            <label for="message">Your message:</label> <br />
+            <textarea name="message" id="message" style="height: 100px" class="form-control" placeholder="Enter your message.." required></textarea>
+            <br />
+            <button type="submit" value="submit" class="btn btn-lg btn-primary">Submit</button>
+          </form>
+        </div>
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="./logo-25.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"/>May-Weather&trade;</a>
           <div class="col text-center">
-            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:randomfake@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:randomfake@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
             <p>&copy;2021 | All rights Reserved</p>
           </div>
         </div>
