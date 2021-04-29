@@ -83,7 +83,7 @@ function getOpenWeatherResults(searchString){ // this function will make the req
 }
 
 
-const renderWeatherData = (widget, location, current, feelsLike, high, low, description, iconCode, iconUrl) => {    //Function that renders the data
+function renderWeatherData(widget, location, current, feelsLike, high, low, description, iconCode, iconUrl){    //Function that renders the data
   const target = document.getElementById(widget);
   // console.log(description);
   target.innerHTML = `
@@ -104,4 +104,4 @@ const renderWeatherData = (widget, location, current, feelsLike, high, low, desc
     </div>
   </div>
   `;
-}
+};
