@@ -9,19 +9,19 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log(longitude);
     main.innerHTML = getOpenWeatherResults(longitude, latitude);
   }
-  
-  const searchSubmit = document.getElementById("submit-button");
-  searchSubmit.addEventListener('click', function(e){
-  e.preventDefault();
-  console.log(e.target);
+
+  const searchSubmit = document.getElementById("submit-button");    //grabs the submit button out of the DOM
+  searchSubmit.addEventListener('click', function(e){   //adds eventListener to DOM
+  e.preventDefault();   //Keeps the browser from refreshing when clicking Search
+  console.log(e.target);  //displays searchSubmit in console  
   let searchString = document.getElementById("search-bar").value; //captures the value in the search bar
   console.log(searchString);  //displays value of searchString entered into search-bar in console
   getOpenWeatherResults(searchString);
-});
+  });
 
 });
 
-const dataKey = { 
+const dataKey = {   //created a array that contains the OpenWeathe API key and base URL
   key: "61cf3cec929d0aa862f5acfcf1df83c8",
   base: "https://api.openweathermap.org/data/2.5/"
 };

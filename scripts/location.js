@@ -1,4 +1,6 @@
 // GEO Find Me Function - gets users data should they agree to share
+var lon; // global variable for longitude
+var lat; // global variable for latitude 
 
 function geoFindMe() {
 
@@ -11,10 +13,8 @@ function geoFindMe() {
   function success(position) {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
-    // const coordinates ={
-    //   lat: latitude,
-    //   long: longitude
-    // };
+    lat= latitude;
+    lon= longitude;
     // status.textContent = '';
     // mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
