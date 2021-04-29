@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", function(){
+  const main = document.getElementById("weather-widget");
+  
+  if(!geoFindMe()){
+    main.innerHTML = getOpenWeatherResults("Washington");
+  }
+  else{
+    console.log(latitude);
+    console.log(longitude);
+    main.innerHTML = getOpenWeatherResults(longitude, latitude);
+  }
+  
+  const searchSubmit = document.getElementById("submit-button");
+  searchSubmit.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log(e.target);
 const dataKey = {   //created a array that contains the OpenWeathe API key and base URL
   key: "61cf3cec929d0aa862f5acfcf1df83c8",
   base: "https://api.openweathermap.org/data/2.5/"
@@ -13,9 +29,43 @@ searchSubmit.addEventListener('click', function(e){   //adds eventListener to DO
   getOpenWeatherResults(searchString);
 });
 
+});
+
+const dataKey = { 
+  key: "61cf3cec929d0aa862f5acfcf1df83c8",
+  base: "https://api.openweathermap.org/data/2.5/"
+};
+
+
+// const searchSubmit = document.getElementById("submit-button");
+// searchSubmit.addEventListener('click', function(e){
+//   e.preventDefault();
+//   console.log(e.target);
+//   let searchString = document.getElementById("search-bar").value; //captures the value in the search bar
+//   console.log(searchString);
+//   getOpenWeatherResults(searchString);
+// });
+
+// function isCoord(coord) {
+//   console.log(coord);
+//   if(coord === String){
+//     return false;
+//   }
+//   else{
+//     return true;
+//   };
+
+// };
+
 
 function getOpenWeatherResults(searchString){ // this function will make the request from the open weather API
-  let url =`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
+  let url=`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
+  // if(isCoord(searchString)){
+  //   url =`${dataKey.base}weather?lat=${searchString.lat}&lon=${searchString.long}&units=imperial&APPID=${dataKey.key}`;
+  // }
+  // else{
+  //   url =`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
+  // };
   axios.get(url).then(res =>{
     console.log(res);   //displays weather data in console
     const weather = res.data;
@@ -42,19 +92,25 @@ function getOpenWeatherResults(searchString){ // this function will make the req
   })
 }
 
-
-const renderWeatherData = (widget, country, location, current, feelsLike, high, low, iconCode, iconUrl, description) => {    //Function that renders the data
+const renderWeatherData = (widget, location, current, feelsLike, high, low, description, iconCode, iconUrl) => {    //Function that renders the data
   const target = document.getElementById(widget);
   // console.log(description);
   target.innerHTML = `
-    <div id="widget" class="widget">
-      <div id="location" class="location"><h1>${country}, ${location}</h1></div>
-      <div id="current" class="current"><h2>Current: ${Math.round(current)}°f</h2></div>
-      <div id="feels-like" class="feels-like"><h4>Feels Like: ${Math.round(feelsLike)}°f</h4></div>
-      <div id="high" class="high"><h4>High: ${Math.round(high)}°f</h4></div>
-      <div id="low" class="low"><h4>Low: ${Math.round(low)}°f</h4></div>
-      <div id="description" class="description">${description}<img src="${iconUrl}${iconCode}.png"/> </div>
+
+  <div class="card mb-3 w-disp">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title">${location}</h4>
+          <p class="card-text">
+            <h5 class="current-weather">${Math.round(current)}°F<img src="${iconUrl}${iconCode}.png" alt="${description}" /></h5>
+            <p class="high-low">${Math.round(high)}/${Math.round(low)}°F</p>
+            <p class="feels-like">Feels Like: ${Math.round(feelsLike)}°F</p>
+            <p class="description">${description}</p>
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
   `;
 }
-
