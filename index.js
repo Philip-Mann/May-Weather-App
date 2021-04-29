@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function(){
     main.innerHTML = getOpenWeatherResults("Washington");
   }
   else{
-    console.log(latitude);
-    console.log(longitude);
-    main.innerHTML = getOpenWeatherResults(longitude, latitude);
+    console.log(lat);
+    console.log(lon);
+    main.innerHTML = getOpenWeatherResults("");
   }
 
   const searchSubmit = document.getElementById("submit-button");    //grabs the submit button out of the DOM
@@ -36,26 +36,28 @@ const dataKey = {   //created a array that contains the OpenWeathe API key and b
 //   getOpenWeatherResults(searchString);
 // });
 
-// function isCoord(coord) {
-//   console.log(coord);
-//   if(coord === String){
-//     return false;
-//   }
-//   else{
-//     return true;
-//   };
+function isCoord(searchString) {
+  console.log(searchString);
+  if(searchString = ""){
+    console.log("true");
+    return true;
+  }
+  else{
+    console.log("false");
+    return false;
+  };
 
-// };
+};
 
 
 function getOpenWeatherResults(searchString){ // this function will make the request from the open weather API
-  let url=`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
-  // if(isCoord(searchString)){
-  //   url =`${dataKey.base}weather?lat=${searchString.lat}&lon=${searchString.long}&units=imperial&APPID=${dataKey.key}`;
-  // }
-  // else{
-  //   url =`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
-  // };
+  let url; //=`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
+  if(isCoord(searchString)){
+    url =`${dataKey.base}weather?lat=${lat}&lon=${lon}&units=imperial&APPID=${dataKey.key}`;
+  }
+  else{
+    url =`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
+  };
   axios.get(url).then(res =>{
     console.log(res);   //displays weather data in console
     const weather = res.data;
@@ -66,14 +68,15 @@ function getOpenWeatherResults(searchString){ // this function will make the req
     const high = weather.main.temp_max    //gets daily high
     const low = weather.main.temp_min   //gets daily low
     let iconCode = weather.weather[0].icon    //gets icon code
-    let iconUrl = "http://openweathermap.org/img/w/";   //icon  img src Url
+    let iconUrl = "https://openweathermap.org/img/w/";   //icon  img src Url
     let description = [];   //description ie. scattered clouds, in array and had to loop through it to grab it
     if (weather && weather.weather && weather.weather && weather.weather.length > 0) {
       description = weather.weather.map(item => {
         return item.description.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));   //will capitalize the first letter of every word in a string
-      })
+      });
     }
-    renderWeatherData("widget", location, country, current, feelsLike, high, low, iconCode, iconUrl, description) //function to use data from API response in my render
+    console.log(current);
+    renderWeatherData("weather-widget", location, country, current, feelsLike, high, low, iconCode, iconUrl, description) //function to use data from API response in my render
   })
   .catch(err =>{
     console.log("the program errored");
@@ -83,7 +86,7 @@ function getOpenWeatherResults(searchString){ // this function will make the req
 }
 
 
-function renderWeatherData(widget, location, current, feelsLike, high, low, description, iconCode, iconUrl){    //Function that renders the data
+function renderWeatherData(widget, location, country, current, feelsLike, high, low, iconCode, iconUrl, description) {    //Function that renders the data
   const target = document.getElementById(widget);
   // console.log(description);
   target.innerHTML = `
@@ -92,7 +95,7 @@ function renderWeatherData(widget, location, current, feelsLike, high, low, desc
     <div class="row g-0">
       <div class="col-md-8">
         <div class="card-body">
-          <h4 class="card-title">${location}</h4>
+          <h4 class="card-title">${location}, ${country}</h4>
           <p class="card-text">
             <h5 class="current-weather">${Math.round(current)}°F<img src="${iconUrl}${iconCode}.png" alt="${description}" /></h5>
             <p class="high-low">${Math.round(high)}/${Math.round(low)}°F</p>
