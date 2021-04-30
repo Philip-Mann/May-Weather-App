@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
   const main = document.getElementById("weather-widget");
-  geoFindMe(main);
+  geoFindMe(main); // calls the location function as the page starts
   
-    // main.innerHTML = getOpenWeatherResults("Washington");
+  // main.innerHTML = getOpenWeatherResults("Washington");
 
   const searchSubmit = document.getElementById("submit-button");    //grabs the submit button out of the DOM
   searchSubmit.addEventListener('click', function(e){   //adds eventListener to DOM

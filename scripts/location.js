@@ -4,7 +4,7 @@ var lat; // global variable for latitude
 
 function geoFindMe(dom) {
 
-  const status = document.querySelector('#status');
+  // const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
 
   mapLink.href = '';
