@@ -2,9 +2,9 @@
 var lon; // global variable for longitude
 var lat; // global variable for latitude 
 
-function geoFindMe() {
+function geoFindMe(dom) {
 
-  // const status = document.querySelector('#status');
+  const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
 
   mapLink.href = '';
@@ -16,20 +16,22 @@ function geoFindMe() {
     lat= latitude;
     lon= longitude;
     // status.textContent = '';
-    // mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    // mapLink.href = `https://www.openstreetmap.org/#map=10/${latitude}/${longitude}`;
     // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    dom.innerHTML = getOpenWeatherResults();
+    return true;
   }
 
   function error() {
     // status.textContent = 'Unable to retrieve your location';
-    return false;
+    dom.innerHTML = getOpenWeatherResults("Washington");
   }
 
   if(!navigator.geolocation) {
     // status.textContent = 'Geolocation is not supported by your browser';
   } else {
     // status.textContent = 'Locating…';
-    navigator.geolocation.getCurrentPosition(success, error);
+    return navigator.geolocation.getCurrentPosition(success, error);
   }
 
 }

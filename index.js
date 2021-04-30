@@ -1,14 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
   const main = document.getElementById("weather-widget");
+  geoFindMe(main);
   
-  if(!geoFindMe()){
-    main.innerHTML = getOpenWeatherResults("Washington");
-  }
-  else{
-    console.log(lat);
-    console.log(lon);
-    main.innerHTML = getOpenWeatherResults("");
-  }
+    // main.innerHTML = getOpenWeatherResults("Washington");
 
   const searchSubmit = document.getElementById("submit-button");    //grabs the submit button out of the DOM
   searchSubmit.addEventListener('click', function(e){   //adds eventListener to DOM
@@ -38,7 +32,7 @@ const dataKey = {   //created a array that contains the OpenWeathe API key and b
 
 function isCoord(searchString) {
   console.log(searchString);
-  if(searchString = ""){
+  if(searchString == undefined){
     console.log("true");
     return true;
   }
