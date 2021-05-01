@@ -1,12 +1,8 @@
 // GEO Find Me Function - gets users data should they agree to share
 var lon; // global variable for longitude
 var lat; // global variable for latitude 
-<<<<<<< HEAD
 
 function geoFindMe(main) {
-=======
-function geoFindMe(dom) {
->>>>>>> development
 
   // const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
