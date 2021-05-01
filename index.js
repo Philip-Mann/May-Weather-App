@@ -86,7 +86,7 @@ const renderWeatherData = (widget, location, country, current, feelsLike, high, 
   target.innerHTML = `
 
   <div class="card mb-3 w-disp">
-    <div class="row g-0">
+    <div class="row g-0 special-card">
       <div class="col-md-8">
         <div class="card-body">
           <h4 class="card-title">${location}, ${country}</h4>
