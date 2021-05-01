@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function(){
   console.log(searchString);  //displays value of searchString entered into search-bar in console
   getOpenWeatherResults(searchString);
   });
-
 });
 
 const dataKey = {   //created a array that contains the OpenWeathe API key and base URL
@@ -86,16 +85,19 @@ const renderWeatherData = (widget, location, country, current, feelsLike, high, 
   target.innerHTML = `
 
   <div class="card mb-3 w-disp">
-    <div class="row g-0">
+    <div class="row g-0 special-card">
       <div class="col-md-8">
-        <div class="card-body">
-          <h4 class="card-title">${location}, ${country}</h4>
-          <p class="card-text">
-            <h5 class="current-weather">${Math.round(current)}°F<img src="${iconUrl}${iconCode}.png" alt="${description}" /></h5>
-            <p class="high-low">${Math.round(high)}/${Math.round(low)}°F</p>
-            <p class="feels-like">Feels Like: ${Math.round(feelsLike)}°F</p>
-            <p class="description">${description}</p>
-          </p>
+        <div class="card-body align-items-center d-flex justify-content-center">
+          <div class="card-body" style="position: relative">
+            <h4 class="card-title">${location}, ${country}</h4>
+            <p class="card-text">
+              <h5 class="current-weather">${Math.round(current)}°F</h5>
+              <p class="high-low">${Math.round(high)}/${Math.round(low)}°F</p>
+              <p class="feels-like">Feels Like: ${Math.round(feelsLike)}°F</p>
+              <p class="description">${description}</p>
+            </p>
+            <p style="position: absolute; right:-80px; top:130px;"> <img class="icon" style=" height:100px; width:100px;" src="${iconUrl}${iconCode}.png" alt="${description}"/></p>
+          </div>
         </div>
       </div>
     </div>
