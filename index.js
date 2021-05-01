@@ -1,29 +1,20 @@
 var globalIconCode
 document.addEventListener("DOMContentLoaded", function(){
   const main = document.getElementById("weather-widget");
+  geoFindMe(main); // calls the location function as the page starts
   
-  // if(!geoFindMe()){
-main.innerHTML = getOpenWeatherResults("Washington");
-  // }
-  // else{
-  //   console.log(latitude);
-  //   console.log(longitude);
-  //   main.innerHTML = getOpenWeatherResults(longitude, latitude);
-  // }
-  
-
-const searchSubmit = document.getElementById("submit-button");    //grabs the submit button out of the DOM
-searchSubmit.addEventListener('click', function(e){   //adds eventListener to DOM
+  const searchSubmit = document.getElementById("submit-button");    //grabs the submit button out of the DOM
+  searchSubmit.addEventListener('click', function(e){   //adds eventListener to DOM
   e.preventDefault();   //Keeps the browser from refreshing when clicking Search
   console.log(e.target);  //displays searchSubmit in console  
   let searchString = document.getElementById("search-bar").value; //captures the value in the search bar
   console.log(searchString);  //displays value of searchString entered into search-bar in console
   getOpenWeatherResults(searchString);
-});
+  });
 
 });
 
-const dataKey = { 
+const dataKey = {   //created a array that contains the OpenWeathe API key and base URL
   key: "61cf3cec929d0aa862f5acfcf1df83c8",
   base: "https://api.openweathermap.org/data/2.5/"
 };
@@ -38,26 +29,28 @@ const dataKey = {
 //   getOpenWeatherResults(searchString);
 // });
 
-// function isCoord(coord) {
-//   console.log(coord);
-//   if(coord === String){
-//     return false;
-//   }
-//   else{
-//     return true;
-//   };
+function isCoord(searchString) {
+  console.log(searchString);
+  if(searchString == undefined){
+    console.log("true");
+    return true;
+  }
+  else{
+    console.log("false");
+    return false;
+  };
 
-// };
+};
 
 
 function getOpenWeatherResults(searchString){ // this function will make the request from the open weather API
-  let url=`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
-  // if(isCoord(searchString)){
-  //   url =`${dataKey.base}weather?lat=${searchString.lat}&lon=${searchString.long}&units=imperial&APPID=${dataKey.key}`;
-  // }
-  // else{
-  //   url =`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
-  // };
+  let url; //=`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
+  if(isCoord(searchString)){
+    url =`${dataKey.base}weather?lat=${lat}&lon=${lon}&units=imperial&APPID=${dataKey.key}`;
+  }
+  else{
+    url =`${dataKey.base}weather?q=${searchString}&units=imperial&APPID=${dataKey.key}`;
+  };
   axios.get(url).then(res =>{
     console.log(res);   //displays weather data in console
     const weather = res.data;
@@ -68,12 +61,12 @@ function getOpenWeatherResults(searchString){ // this function will make the req
     const high = weather.main.temp_max    //gets daily high
     const low = weather.main.temp_min   //gets daily low
     let iconCode = weather.weather[0].icon    //gets icon code
-    let iconUrl = "http://openweathermap.org/img/w/";   //icon  img src Url
+    let iconUrl = "https://openweathermap.org/img/w/";   //icon  img src Url
     let description = [];   //description ie. scattered clouds, in array and had to loop through it to grab it
     if (weather && weather.weather && weather.weather && weather.weather.length > 0) {
       description = weather.weather.map(item => {
         return item.description.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));   //will capitalize the first letter of every word in a string
-      })
+      });
     }
     globalIconCode = iconCode;
     togglePageStyle(globalIconCode);
@@ -113,6 +106,42 @@ const renderWeatherData = (widget, location, country, current, feelsLike, high, 
 function togglePageStyle(globalIconCode) {
   let allCodes = ["01d", "01n", "02d", "02n", "03d", "03n", "04d", "04n", "09d", "10d", "11d", "13d", "50d"]
   //d for day n for night ------ 01 Clear    02 Few    03 Scattered    04 Broken    09 Shower    10 Rain    11 Thunderstorm    13 Snow    50 Mist/Fog
-  if(globalIconCode == allCodes[6]) {
-    console.log("hello")
+  if(globalIconCode == allCodes[0]) {
+    document.body.style.backgroundImage = "url('./images/Clear-D.jpg')";
+  }
+  else if (globalIconCode == allCodes[1]) {
+    document.body.style.backgroundImage = "url('./images/Clear-N.jpg')";
+  }
+  else if (globalIconCode == allCodes[2]) {
+    document.body.style.backgroundImage = "url('./images/Few-D.jpg')";
+  }
+  else if (globalIconCode == allCodes[3]) {
+    document.body.style.backgroundImage = "url('./images/Few-N.jpg')";
+  }
+  else if (globalIconCode == allCodes[4]) {
+    document.body.style.backgroundImage = "url('./images/Scattered-D.jpg')";
+  }
+  else if (globalIconCode == allCodes[5]) {
+    document.body.style.backgroundImage = "url('./images/Scattered-N.jpg')";
+  }
+  else if (globalIconCode == allCodes[6]) {
+    document.body.style.backgroundImage = "url('./images/Broken-D.jpg')";
+  }
+  else if (globalIconCode == allCodes[7]) {
+    document.body.style.backgroundImage = "url('./images/Broken-N.jpg')";
+  }
+  else if (globalIconCode == allCodes[8]) {
+    document.body.style.backgroundImage = "url('./images/Shower.jpg')";
+  }
+  else if (globalIconCode == allCodes[9]) {
+    document.body.style.backgroundImage = "url('./images/Rain.jpg')";
+  }
+  else if (globalIconCode == allCodes[10]) {
+    document.body.style.backgroundImage = "url('./images/Thunderstorm.jpg')";
+  }
+  else if (globalIconCode == allCodes[11]) {
+    document.body.style.backgroundImage = "url('./images/Snow.jpg')";
+  }
+  else if (globalIconCode == allCodes[12]) {
+    document.body.style.backgroundImage = "url('./images/Mist.jpg')";
   }}
