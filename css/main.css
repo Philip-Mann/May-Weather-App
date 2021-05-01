@@ -62,5 +62,17 @@
 }
 
 .special-card2 {
-  opacity: .75;
+  opacity: .8;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
 }
