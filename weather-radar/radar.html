@@ -80,20 +80,20 @@
       </div>
       <div class="container-fluid radar-map" id="mapid"style=""></div>
     </main>
-    <footer>
-      <nav class="navbar fixed-bottom navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="../logo-25.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"/>May-Weather&trade;</a>
-          <div class="col text-center">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:randomfake@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <p>&copy;2021 | All rights Reserved</p>
+    <footer class="footer fixed-bottom bg-light">   <!--removed nav tags and used footer tags instead-->
+      <div class="container-footer">    <!--changed from container-fluid to container-footer-->
+          <div class="logo"><img src="../logo-14.svg" alt="Logo" /></div>    <!--updated logo to just a picture logo; old logo had text and was placed next to more text-->
+          <div class="media">   <!--created a div called media to make them responsive-->
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:randomfake@gmail.com"><i class="fas fa-envelope"></i></a>
           </div>
-        </div>
-      </nav>
+          <div class="footer-text">   <!--created a div footer-text to make foot text responsive-->
+            <p>May-Weather&trade;</p>
+            <p> &copy;2021</p>
+            <p>All Rights Reserved</p>
+          </div>
     </footer>
     <script src="./radar.js"></script>
   </body>
