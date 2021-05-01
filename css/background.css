@@ -1,3 +1,8 @@
-.weather {
-    max-height: ;
+body {
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+body, html {
+  height: 100%;
 }

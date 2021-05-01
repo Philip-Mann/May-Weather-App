@@ -1,11 +1,11 @@
 const main = document.getElementById("weather-widget");
 const forecast = document.getElementById("weather-carousel");
+var globalIconCode
 document.addEventListener("DOMContentLoaded", function(){
   // const main = document.getElementById("weather-widget");
   // const forecast = document.getElementById("weather-carousel");
   geoFindMe(main); // calls the location function as the page starts
   
-
   const searchSubmit = document.getElementById("submit-button");    //grabs the submit button out of the DOM
   searchSubmit.addEventListener('click', function(e){   //adds eventListener to DOM
   e.preventDefault();   //Keeps the browser from refreshing when clicking Search
@@ -77,6 +77,9 @@ function getOpenWeatherResults(searchString){ // this function will make the req
     //function call to get forecast data
     getForecastResults(lon, lat);
     //=========Forecast===============
+    globalIconCode = iconCode;
+    togglePageStyle(globalIconCode);
+    console.log(globalIconCode);
     renderWeatherData("weather-widget", location, country, current, feelsLike, high, low, iconCode, iconUrl, description) //function to use data from API response in my render
   })
   .catch(err =>{
@@ -157,3 +160,47 @@ function renderDailyForecast(daily){ //renders the forecast into casrds on a car
   })
   return printed.join("");
 };
+
+
+function togglePageStyle(globalIconCode) {
+  let allCodes = ["01d", "01n", "02d", "02n", "03d", "03n", "04d", "04n", "09d", "10d", "11d", "13d", "50d"]
+  //d for day n for night ------ 01 Clear    02 Few    03 Scattered    04 Broken    09 Shower    10 Rain    11 Thunderstorm    13 Snow    50 Mist/Fog
+  if(globalIconCode == allCodes[0]) {
+    document.body.style.backgroundImage = "url('./images/Clear-D.jpg')";
+  }
+  else if (globalIconCode == allCodes[1]) {
+    document.body.style.backgroundImage = "url('./images/Clear-N.jpg')";
+  }
+  else if (globalIconCode == allCodes[2]) {
+    document.body.style.backgroundImage = "url('./images/Few-D.jpg')";
+  }
+  else if (globalIconCode == allCodes[3]) {
+    document.body.style.backgroundImage = "url('./images/Few-N.jpg')";
+  }
+  else if (globalIconCode == allCodes[4]) {
+    document.body.style.backgroundImage = "url('./images/Scattered-D.jpg')";
+  }
+  else if (globalIconCode == allCodes[5]) {
+    document.body.style.backgroundImage = "url('./images/Scattered-N.jpg')";
+  }
+  else if (globalIconCode == allCodes[6]) {
+    document.body.style.backgroundImage = "url('./images/Broken-D.jpg')";
+  }
+  else if (globalIconCode == allCodes[7]) {
+    document.body.style.backgroundImage = "url('./images/Broken-N.jpg')";
+  }
+  else if (globalIconCode == allCodes[8]) {
+    document.body.style.backgroundImage = "url('./images/Shower.jpg')";
+  }
+  else if (globalIconCode == allCodes[9]) {
+    document.body.style.backgroundImage = "url('./images/Rain.jpg')";
+  }
+  else if (globalIconCode == allCodes[10]) {
+    document.body.style.backgroundImage = "url('./images/Thunderstorm.jpg')";
+  }
+  else if (globalIconCode == allCodes[11]) {
+    document.body.style.backgroundImage = "url('./images/Snow.jpg')";
+  }
+  else if (globalIconCode == allCodes[12]) {
+    document.body.style.backgroundImage = "url('./images/Mist.jpg')";
+  }}
