@@ -45,3 +45,14 @@
   }
 }
 
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+#news-carousel {
+  display: flex;
+  width: 80%;
+  height:fit-content;
+
+}
