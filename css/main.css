@@ -57,6 +57,19 @@
 
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+#weather-carousel {
+  /* border: 1px solid crimson; */
+  display: flex;
+  /* justify-content:center; */
+  /* align-items: center; */
+  /* width: 50%; */
+}
+
 .special-card {
   background-color: rgba(70, 130, 180, 1);
 }

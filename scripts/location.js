@@ -1,7 +1,8 @@
 // GEO Find Me Function - gets users data should they agree to share
 var lon; // global variable for longitude
 var lat; // global variable for latitude 
-function geoFindMe(dom) {
+
+function geoFindMe(main) {
 
   // const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
@@ -17,13 +18,12 @@ function geoFindMe(dom) {
     // status.textContent = '';
     // mapLink.href = `https://www.openstreetmap.org/#map=10/${latitude}/${longitude}`;
     // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    dom.innerHTML = getOpenWeatherResults();
-    return true;
+    main.innerHTML = getOpenWeatherResults();
   }
 
   function error() {
     // status.textContent = 'Unable to retrieve your location';
-    dom.innerHTML = getOpenWeatherResults("Washington");
+    main.innerHTML = getOpenWeatherResults("Washington");
   }
 
   if(!navigator.geolocation) {

@@ -39,7 +39,7 @@ function renderNews(articles) {
     else{
       return `
       <div class="carousel-item">
-        <a target="_blank" href="https://www.engadget.com/att-firstnet-5g-public-safety-network-133023906.html"><img src="https://s.yimg.com/os/creatr-uploaded-images/2021-04/709cb5a0-92e0-11eb-8fdd-12378299c56c" class="d-block w-100" alt="AT&T adds 5G to its public safety network" style="height: 300px; width: 100%;"></a>
+      <a target="_blank" href="${item.url}"><img src="${item.urlToImage}" class="d-block w-100" alt="${item.title}" style="height: 300px; width: 100%;"></a>
       </div>
       `;  
     };
